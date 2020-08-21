@@ -1,0 +1,502 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <https://w3id.org/dggs/as-terms/>
+PREFIX cs: <https://w3id.org/dggs/as-terms> 
+
+
+cs:
+    a skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-08-21"^^xsd:date ;
+    dcterms:creator <https://www.ogc.org> ;
+    dcterms:modified "2020-08-21"^^xsd:date ;
+    dcterms:publisher <https://www.ogc.org> ;
+    skos:definition "Terms, represented as SKOS Concepts, from Section 4 of the Discrete Global Grid Abstract Specification, version 2.0."@en ;
+    skos:prefLabel "DGGS Abstract Sepcification 2.0 Terms and definitions"@en ;
+    owl:versionIRI <https://w3id.org/dggs/as-terms/1.0> ;
+    dcterms:provenance "DGGS Abstract Sepcification 2.0"@en ;
+    skos:hasTopConcept 
+        :4-1 ,
+        :4-2 ,
+        :4-3 ,
+        :4-4 ,
+        :4-5 ,
+        :4-6 ,
+        :4-7 ,
+        :4-8 ,
+        :4-9 ,
+        :4-10 ,
+        :4-11 ,
+        :4-12 ,
+        :4-13 ,
+        :4-14 ,
+        :4-15 ,
+        :4-16 ,
+        :4-17 ,
+        :4-18 ,
+        :4-19 ,
+        :4-20 ,
+        :4-21 ,
+        :4-22 ,
+        :4-23 ,
+        :4-24 ,
+        :4-25 ,
+        :4-26 ,
+        :4-27 ,
+        :4-28 ,
+        :4-29 ,
+        :4-30 ,
+        :4-31 ,
+        :4-32 ,
+        :4-33 ,
+        :4-34 ,
+        :4-35 ,
+        :4-36 ,
+        :4-37 ,
+        :4-38 ,
+        :4-39 ,
+        :4-40 ,
+        :4-41 ,
+        :4-42 ,
+        :4-43 ,
+        :4-44 ,
+        :4-45 ,
+        :4-46 ,
+        :4-47 ,
+        :4-48 ,
+        :4-49 ,
+        :4-50 ,
+        :4-51 ,
+        :4-52 ;
+.
+:4-1 a skos:Concept ; skos:notation "4.1." ;
+skos:prefLabel "boundary"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "set that represents the limit of an entity"@en ;
+skos:scopeNote "Boundary is most commonly used in the context of geometry, where the set is a collection of points or a collection of objects that represent those points. In other domains, the term is used metaphorically to describe the transition between an entity and the rest of its domain of discourse."@en ;
+dcterms:provenance "ISO 19107:2019, Clause 4.6"@en ;
+skos:topConceptOf cs: ;
+.
+:4-2 a skos:Concept ; skos:notation "4.2." ;
+skos:prefLabel "cell"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> spatial, spatio-temporal or temporal unit of geometry with dimension greater than 0, associated with a unique zonal identifier (Clause 4.51)"@en ;
+skos:scopeNote "All cells within a DGGS share the dimensionality of the DGGS, and DGGS with dimensionality of 0, are not supported."@en ;
+skos:scopeNote "Cells are the primary container for storing and retrieving data within a DGGS implementation."@en ;
+skos:scopeNote "DGGS may instantiate cells by reference to their zonal identifier (Clause 4.51), for instance in databases or through tile nomenclature, and by their geometry, for instance through membership of a grid."@en ;
+skos:scopeNote "The zonal identifier (Clause 4.51) of a cell provides the coordinates of a representative position for the cell, and all feature geometry is represented by sets of cells."@en ;
+skos:topConceptOf cs: ;
+.
+:4-3 a skos:Concept ; skos:notation "4.3." ;
+skos:prefLabel "cell refinement"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> process of subdividing parent cells (Clause 4.33) into descendant child cells (Clause 4.4) using a specified refinement ratio (Clause 4.38) and suite of refinement strategies"@en ;
+skos:scopeNote "Iterative application of cell refinements creates a hierarchy of descendant discrete global grids (Clause 4.12)."@en ;
+skos:scopeNote "Cell refinement methods may result in child cells that each have a single parent or that have multiple parents."@en ;
+skos:topConceptOf cs: ;
+.
+:4-4 a skos:Concept ; skos:notation "4.4." ;
+skos:prefLabel "child cell"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> immediate descendant of a parent cell"@en ;
+skos:scopeNote "child cells are either within a single parent cell (Clause 4.33) or overlapped by multiple parent cells"@en ;
+skos:topConceptOf cs: ;
+.
+:4-5 a skos:Concept ; skos:notation "4.5." ;
+skos:prefLabel "class"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "description of a set of objects that share the same attributes, operations, methods, relationships, and semantics"@en ;
+skos:scopeNote "A class may use a set of interfaces to specify collections of operations it provides to its environment. The term was first used in this way in the general theory of object-oriented programming, and later adopted for use in this same sense in UML."@en ;
+dcterms:provenance "ISO 19103:2015, Clause 4.27, modified — Note 1 to entry has been added from ISO 19117:2012, 4.2"@en ;
+skos:topConceptOf cs: ;
+.
+:4-6 a skos:Concept ; skos:notation "4.6." ;
+skos:prefLabel "compound coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "coordinate reference system (Clause 4.7) using at least two independent coordinate reference systems (Clause 4.7)"@en ;
+skos:scopeNote "Coordinate reference systems (Clause 4.7) are independent of each other if coordinate values in one cannot be converted or transformed into coordinate values in the other."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.3"@en ;
+skos:topConceptOf cs: ;
+.
+:4-7 a skos:Concept ; skos:notation "4.7." ;
+skos:prefLabel "coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "coordinate system that is related to an object by a datum (Clause 4.10)"@en ;
+skos:scopeNote "Geodetic and vertical datums are referred to as reference frames."@en ;
+skos:scopeNote "For geodetic and vertical datums (Clause 4.10), the object will be the Earth. In planetary applications, geodetic and vertical reference frames may be applied to other celestial bodies."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.9"@en ;
+skos:topConceptOf cs: ;
+.
+:4-8 a skos:Concept ; skos:notation "4.8." ;
+skos:prefLabel "coordinate system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "set of mathematical rules for specifying how coordinates are to be assigned to points"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.11"@en ;
+skos:topConceptOf cs: ;
+.
+:4-9 a skos:Concept ; skos:notation "4.9." ;
+skos:prefLabel "data type"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "specification of a value (Clause 4.49) domain with operations allowed on values in this domain"@en ;
+skos:scopeNote "Data types include primitive predefined types and user-definable types. All instances of a data type lack identity."@en ;
+skos:example "Integer, Real, Boolean, String, Date (conversion of a date into a series of codes)."@en ;
+dcterms:provenance "ISO 19103:2015, Clause 4.14, modified — Note 1 to entry has been added from ISO 19156, 4.3"@en ;
+skos:topConceptOf cs: ;
+.
+:4-10 a skos:Concept ; skos:notation "4.10." ;
+skos:prefLabel "datum"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "reference frame parameter or set of parameters that realize the positions of the origin, the scale, and the orientation of a coordinate system (Clause 4.8)"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.15"@en ;
+skos:topConceptOf cs: ;
+.
+:4-11 a skos:Concept ; skos:notation "4.11." ;
+skos:prefLabel "datum ensemble"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "group of multiple realizations of the same terrestrial or vertical reference system that, for approximate spatial referencing purposes, are not significantly different"@en ;
+skos:scopeNote "Datasets referenced to the different realizations within a datum ensemble may be merged without coordinate transformation."@en ;
+skos:scopeNote "‘Approximate’ is for users to define but typically is in the order of under 1 decimetre but may be up to 2 metres."@en ;
+skos:example "“WGS 84” as an undifferentiated group of realizations including WGS 84 (TRANSIT), WGS 84 (G730), WGS 84 (G873), WGS 84 (G1150), WGS 84 (G1674) and WGS 84 (G1762). At the surface of the Earth these have changed on average by 0.7 m between the TRANSIT and G730 realizations, a further 0.2 m between G730 and G873, 0.06 m between G873 and G1150, 0.2 m between G1150 and G1674 and 0.02 m between G1674 and G1762)."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.16"@en ;
+skos:topConceptOf cs: ;
+.
+:4-12 a skos:Concept ; skos:notation "4.12." ;
+skos:prefLabel "discrete global grid"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> set of cells (Clause 4.2) at the same refinement level (Clause 4.37), that uniquely and completely cover a globe"@en ;
+skos:scopeNote "the set of cell zonal identifiers (Clause 4.51) comprising a discrete global grid form a single Zone Class with its associated refinement level (Clause 4.37)."@en ;
+skos:scopeNote "the configuration of the set of cells comprising a discrete global grid satisfy at least one grid constraint in the DGG_GridConstraint codelist"@en ;
+skos:topConceptOf cs: ;
+.
+:4-13 a skos:Concept ; skos:notation "4.13." ;
+skos:prefLabel "discrete global grid system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "DGGS integrated system comprising a hierarchy (Clause 4.26) of discrete global grids (Clause 4.12), spatio-temporal referencing (Clause 4.42) by zonal identifiers (Clause 4.51) and functions for quantization (Clause 4.36), zonal query (Clause 4.50), and interoperability (Clause 4.28)"@en ;
+skos:topConceptOf cs: ;
+.
+:4-14 a skos:Concept ; skos:notation "4.14." ;
+skos:prefLabel "duration"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "non-negative quantity of time equal to the difference between the final and initial instants (Clause 4.29) of a time interval (Clause 4.30)"@en ;
+skos:scopeNote "The duration is one of the base quantities in the International System of Quantities (ISQ) on which the International System of Units (SI) is based. The term “time” instead of “duration” is often used in this context and also for an infinitesimal duration."@en ;
+skos:scopeNote "For the term “duration”, expressions such as “time” or “time interval” are often used, but the term “time” is not recommended in this sense and the term “time interval” is deprecated in this sense to avoid confusion with the concept of “time interval”."@en ;
+skos:scopeNote "The exact duration of a time scale unit depends on the time scale used. For example, the durations of a year, month, week, day, hour or minute, may depend on when they occur [in a Gregorian calendar, a calendar month can have a duration of 28, 29, 30, or 31 days; in a 24-hour clock, a clock minute can have a duration of 59, 60, or 61 seconds, etc.]. Therefore, the exact duration can only be evaluated if the exact duration of each is known."@en ;
+skos:scopeNote "This definition is closely related to NOTE 1 of the terminological entry “duration” in IEC 60050-113:2011, 113-01-13."@en ;
+dcterms:provenance "ISO 8601-1:2019, Clause 3.1.1.8"@en ;
+skos:topConceptOf cs: ;
+.
+:4-15 a skos:Concept ; skos:notation "4.15." ;
+skos:prefLabel "dynamic coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "coordinate reference system (Clause 4.7) that has a dynamic reference frame (Clause 4.16)"@en ;
+skos:scopeNote "Coordinates of points on or near the crust of the Earth that are referenced to a dynamic coordinate reference system may change with time, usually due to crustal deformations such as tectonic motion and glacial isostatic adjustment."@en ;
+skos:scopeNote "Metadata for a dataset referenced to a dynamic coordinate reference system should include coordinate epoch information."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.19"@en ;
+skos:topConceptOf cs: ;
+.
+:4-16 a skos:Concept ; skos:notation "4.16." ;
+skos:prefLabel "dynamic reference frame"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "dynamic datum reference frame (Clause 4.10) in which the defining parameters include time evolution"@en ;
+skos:scopeNote "The defining parameters that have time evolution are usually a coordinate set."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.20"@en ;
+skos:topConceptOf cs: ;
+.
+:4-17 a skos:Concept ; skos:notation "4.17." ;
+skos:prefLabel "error budget"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<metric> statement of or methodology for describing the nature and magnitude of the errors which affect the results of a calculation"@en ;
+dcterms:provenance "ISO 19107:2019, Clause 4.35, modified — Note 1 to entry has been removed"@en ;
+skos:topConceptOf cs: ;
+.
+:4-18 a skos:Concept ; skos:notation "4.18." ;
+skos:prefLabel "feature"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "abstraction of real-world phenomena"@en ;
+skos:scopeNote "A feature may occur as a type or an instance. In this document, feature instance is meant unless otherwise specified."@en ;
+dcterms:provenance "ISO 19101-1:2014, Clause 4.1.11, modified — Note 1 to entry has been added from ISO 19156, 4.6"@en ;
+skos:topConceptOf cs: ;
+.
+:4-19 a skos:Concept ; skos:notation "4.19." ;
+skos:prefLabel "feature type"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "class (Clause 4.5) of features (Clause 4.18) having common characteristics"@en ;
+dcterms:provenance "ISO 19156:2011, Clause 4.7"@en ;
+skos:topConceptOf cs: ;
+.
+:4-20 a skos:Concept ; skos:notation "4.20." ;
+skos:prefLabel "geodetic coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "three-dimensional coordinate reference system (Clause 4.7) based on a geodetic reference frame and having either a three-dimensional Cartesian or a spherical coordinate system"@en ;
+skos:scopeNote "In this document a coordinate reference system (Clause 4.7) based on a geodetic reference frame and having an ellipsoidal coordinate system is geographic."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.13"@en ;
+skos:topConceptOf cs: ;
+.
+:4-21 a skos:Concept ; skos:notation "4.21." ;
+skos:prefLabel "geographic coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "coordinate reference system (Clause 4.7) that has a geodetic reference frame and an ellipsoidal coordinate system"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.35"@en ;
+skos:topConceptOf cs: ;
+.
+:4-22 a skos:Concept ; skos:notation "4.22." ;
+skos:prefLabel "geographic identifier"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "spatial reference (Clause 4.41) in the form of a label or code that identifies a location (Clause 4.31)"@en ;
+skos:example "“Spain” is an example of a label (country name); “SW1P 3AD” is an example of a code (postcode)."@en ;
+dcterms:provenance "ISO 19112:2019, Clause 3.1.2"@en ;
+skos:topConceptOf cs: ;
+.
+:4-23 a skos:Concept ; skos:notation "4.23." ;
+skos:prefLabel "geometric primitive"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "geometric object representing a single, connected, homogeneous (isotropic) element of space"@en ;
+skos:scopeNote "Geometric primitives are non-decomposed objects that present information about geometric configuration. They include points, curves, surfaces, and solids. Many geometric objects behave like primitives (supporting the same interfaces defined for geometric primitives) but are actually composites composed of some number of other primitives. General collections may be aggregates and incapable of acting like a primitive (such as the lines of a complex network, which is not connected and thus incapable of being traceable as a single line). By this definition, a geometric primitive is topological open, since the boundary points are not isotropic to the interior points. Geometry is assumed to be closed. For points, the boundary is empty."@en ;
+dcterms:provenance "ISO 19107:2019, Clause 4.50"@en ;
+skos:topConceptOf cs: ;
+.
+:4-24 a skos:Concept ; skos:notation "4.24." ;
+skos:prefLabel "globe"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> celestial body"@en ;
+skos:scopeNote "In this document globe is used in its most general form to refer to any celestial body that may be referenced by a DGGS. When a specific body, such as the Earth is referred to, an explicit term is used."@en ;
+skos:topConceptOf cs: ;
+.
+:4-25 a skos:Concept ; skos:notation "4.25." ;
+skos:prefLabel "grid"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "network composed of two or more sets of curves in which the members of each set intersect the members of the other sets in an algorithmic way"@en ;
+skos:scopeNote "The curves partition a space into grid cells."@en ;
+dcterms:provenance "ISO 19123:2005, Clause 4.1.23"@en ;
+skos:topConceptOf cs: ;
+.
+:4-26 a skos:Concept ; skos:notation "4.26." ;
+skos:prefLabel "hierarchy"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> organization and ranking of successive levels of cell refinement (Clause 4.3) of discrete global grids (Clause 4.12)"@en ;
+skos:topConceptOf cs: ;
+.
+:4-27 a skos:Concept ; skos:notation "4.27." ;
+skos:prefLabel "initial discrete global grid"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> discrete global grid tessellation created by circumscribing a defined path along the chosen surface model of the Earth between the vertices of the scaled base unit polyhedron"@en ;
+skos:topConceptOf cs: ;
+.
+:4-28 a skos:Concept ; skos:notation "4.28." ;
+skos:prefLabel "interoperability"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "capability to communicate, execute programs, or transfer data among various functional units in a manner that requires the user to have little or no knowledge of the unique characteristics of those units"@en ;
+skos:scopeNote "in this standard interoperability specifically refers to functions that initiate and process transfers of data from a DGGS system."@en ;
+skos:topConceptOf cs: ;
+.
+:4-29 a skos:Concept ; skos:notation "4.29." ;
+skos:prefLabel "instant"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> temporal geometry primitive representing a point in time"@en ;
+skos:scopeNote "On temporal coordinate systems as specified in (Clause 4.46), the temporal geometric primitives (Clause 4.23) instant and interval (Clause 4.30) are the equivalent of points and lines as specified in (ISO 19107:2019)."@en ;
+skos:topConceptOf cs: ;
+.
+:4-30 a skos:Concept ; skos:notation "4.30." ;
+skos:prefLabel "interval"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> temporal geometry primitive representing a line in time"@en ;
+skos:scopeNote "On temporal coordinate systems as specified in (Clause 4.46), the temporal geometric primitives (Clause 4.23) instant (Clause 4.29) and interval are the equivalent of points and lines as specified in (ISO 19107:2019)."@en ;
+skos:topConceptOf cs: ;
+.
+:4-31 a skos:Concept ; skos:notation "4.31." ;
+skos:prefLabel "location"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "particular place or position"@en ;
+skos:scopeNote "A location identifies a geographic place."@en ;
+skos:scopeNote "In the context of DGGS, locations have dimension greater than one, and so are not points."@en ;
+skos:example "“Madrid”, “SW1P 3AD”."@en ;
+dcterms:provenance "ISO 19112:2019, Clause 3.1.3, modified — Note two has been added and an additional example provided"@en ;
+skos:topConceptOf cs: ;
+.
+:4-32 a skos:Concept ; skos:notation "4.32." ;
+skos:prefLabel "observation"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "act of measuring or otherwise determining the value (Clause 4.49) of a property"@en ;
+dcterms:provenance "ISO 19156:2011, Clause 4.11"@en ;
+skos:topConceptOf cs: ;
+.
+:4-33 a skos:Concept ; skos:notation "4.33." ;
+skos:prefLabel "parent cell"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> cell in a higher refinement level of discrete global grid with immediate descendants"@en ;
+skos:scopeNote "parent cells either overlap or contain their child cells (Clause 4.4)."@en ;
+skos:topConceptOf cs: ;
+.
+:4-34 a skos:Concept ; skos:notation "4.34." ;
+skos:prefLabel "period"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> particular era or span of time"@en ;
+skos:scopeNote "Periods are intervals (Clause 4.30) named with a period identifier (Clause 4.35)"@en ;
+skos:topConceptOf cs: ;
+.
+:4-35 a skos:Concept ; skos:notation "4.35." ;
+skos:prefLabel "period identifier"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> temporal reference in the form of a label or code that identifies a period (Clause 4.34)"@en ;
+skos:scopeNote "Period identifiers are the temporal equivalent of geographic identifiers (Clause 4.22) as specified in (ISO 19112:2019)"@en ;
+skos:topConceptOf cs: ;
+.
+:4-36 a skos:Concept ; skos:notation "4.36." ;
+skos:prefLabel "quantization"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> function assigning data from external sources to cell values"@en ;
+skos:topConceptOf cs: ;
+.
+:4-37 a skos:Concept ; skos:notation "4.37." ;
+skos:prefLabel "refinement level"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> numerical order of a discrete global grid (Clause 4.12) in the tessellation sequence"@en ;
+skos:scopeNote "The tessellation with the smallest number of cells has a refinement level = 0."@en ;
+skos:topConceptOf cs: ;
+.
+:4-38 a skos:Concept ; skos:notation "4.38." ;
+skos:prefLabel "refinement ratio"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> ratio of the number of child cells to parent cells"@en ;
+skos:scopeNote "A positive integer ratio n refinement of DGGS parent cells yield n times as many child cells as parent cells."@en ;
+skos:scopeNote "For a two-dimensional DGGS (as defined in this document) this is the surface area ratio."@en ;
+skos:scopeNote "In DGGS literature [10] the term aperture has been used instead of refinement ratio. Refinement ratio is preferred because it is clearer in meaning to audiences outside the early DGGS community."@en ;
+skos:topConceptOf cs: ;
+.
+:4-39 a skos:Concept ; skos:notation "4.39." ;
+skos:prefLabel "sibling cell"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> cell in a discrete global grid with the same parent cell (Clause 4.33)"@en ;
+skos:scopeNote "all the child cells (Clause 4.4) of a parent cell (Clause 4.33) are each others’ sibling cells (Clause 4.39)."@en ;
+skos:topConceptOf cs: ;
+.
+:4-40 a skos:Concept ; skos:notation "4.40." ;
+skos:prefLabel "simple"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<topology, geometry> homogeneous (all points have isomorphic neighborhoods) and with a simple boundary"@en ;
+skos:scopeNote "The interior is everywhere locally isomorphic to an open disc in a Euclidean coordinate space of the appropriate dimension Dn = {P|‖P‖ < 1.0}. The boundary is a dimension one smaller. This essentially means that the object does not intersect nor touch itself. Generally used for a curve that does not cross not touch itself with the possible exception of boundary points. Simple closed curves are isomorphic to a circle."@en ;
+dcterms:provenance "ISO 19107:2019, Clause 3.84"@en ;
+skos:topConceptOf cs: ;
+.
+:4-41 a skos:Concept ; skos:notation "4.41." ;
+skos:prefLabel "spatial reference"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "system for identifying position in the real world"@en ;
+skos:scopeNote "This may take the form of a label, code or coordinate tuple."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.56"@en ;
+skos:topConceptOf cs: ;
+.
+:4-42 a skos:Concept ; skos:notation "4.42." ;
+skos:prefLabel "spatio-temporal reference"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "system for identifying position in the real world that may include time"@en ;
+skos:scopeNote "This may take the form of a label, code or coordinate tuple."@en ;
+skos:topConceptOf cs: ;
+.
+:4-43 a skos:Concept ; skos:notation "4.43." ;
+skos:prefLabel "spatio-temporal coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "compound coordinate reference system (Clause 4.7) in which one constituent coordinate reference system (Clause 4.7) is a spatial coordinate reference system (Clause 4.7) and one is a temporal coordinate reference system (Clause 4.47)"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.59"@en ;
+skos:topConceptOf cs: ;
+.
+:4-44 a skos:Concept ; skos:notation "4.44." ;
+skos:prefLabel "static coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "coordinate reference system (Clause 4.7) that has a static reference frame (Clause 4.45)"@en ;
+skos:scopeNote "Coordinates of points on or near the crust of the Earth that are referenced to a dynamic coordinate reference system do not change with time."@en ;
+skos:scopeNote "Metadata for a dataset referenced to a static coordinate reference system does not require coordinate epoch information."@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.61"@en ;
+skos:topConceptOf cs: ;
+.
+:4-45 a skos:Concept ; skos:notation "4.45." ;
+skos:prefLabel "static reference frame"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "static datum eference frame (Clause 4.10) in which the defining parameters exclude time evolution"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.62"@en ;
+skos:topConceptOf cs: ;
+.
+:4-46 a skos:Concept ; skos:notation "4.46." ;
+skos:prefLabel "temporal coordinate system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<geodesy> one-dimensional coordinate system where the axis is time"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.64"@en ;
+skos:topConceptOf cs: ;
+.
+:4-47 a skos:Concept ; skos:notation "4.47." ;
+skos:prefLabel "temporal coordinate reference system"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "coordinate reference system (Clause 4.7) based on a temporal datum"@en ;
+dcterms:provenance "ISO 19111:2019, Clause 3.1.63"@en ;
+skos:topConceptOf cs: ;
+.
+:4-48 a skos:Concept ; skos:notation "4.48." ;
+skos:prefLabel "tessellation"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "partitioning of a space into a set of conterminous subspaces having the same dimension as the space being partitioned"@en ;
+skos:scopeNote "A tessellation composed of congruent regular polygons or polyhedra is a regular tessellation. One composed of regular, but non-congruent polygons or polyhedra is a semi-regular tessellation. Otherwise the tessellation is irregular. Tessellations on curved surfaces cannot be congruent, so all tessellations in DGGS are either semi-regular or irregular."@en ;
+skos:example "Graphic examples of tessellations may be found in Figures 11, 13, 20, and 22 of ISO 19123:2005."@en ;
+dcterms:provenance "ISO 19123:2005, Clause 4.1.39, modified — Note 1 to entry has been modified and new notes to entry have been added."@en ;
+skos:topConceptOf cs: ;
+.
+:4-49 a skos:Concept ; skos:notation "4.49." ;
+skos:prefLabel "value"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "element of a type domain"@en ;
+skos:scopeNote "A value considers a possible state of an object within a class (Clause 4.5) or type (domain)."@en ;
+skos:scopeNote "A data value is an instance of a datatype, a value without identity."@en ;
+skos:scopeNote "A value can use one of a variety of scales including nominal, ordinal, ratio and interval, spatial and temporal. Primitive datatypes can be combined to form aggregate datatypes with aggregate values, including vectors, tensors and images."@en ;
+dcterms:provenance "ISO/IEC 19501:2005, Clause 5, modified — The notes to entry from ISO 19156, 4.18 have been included"@en ;
+skos:topConceptOf cs: ;
+.
+:4-50 a skos:Concept ; skos:notation "4.50." ;
+skos:prefLabel "zonal query"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> geometry or topology function using a cell’s zonal identifiers (Clause 4.51) to specify geometry"@en ;
+skos:scopeNote "ISO 19107:2019 specifies a suite of geometry and topology functions in the Query2D and Query3D classes, where geometry elements used in each function’s parameters are described by sets of coordinates. In DGGS all geometry can be referenced as sets of cells (Clause 4.2) represented solely by a list (or set) of their zonal identifiers (Clause 4.51). This standard specifies zoneQuery to implement the operations in both Query2D and Query3D using zonal identifiers (Clause 4.51) to reference each operation’s source and target geometry."@en ;
+skos:topConceptOf cs: ;
+.
+:4-51 a skos:Concept ; skos:notation "4.51." ;
+skos:prefLabel "zonal identifier"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DDGS> spatio-temporal reference (Clause 4.42) in the form of a label or code that identifies a zone (Clause 4.52)"@en ;
+skos:scopeNote "A zonal identifier may be a geographic identifier (Clause 4.22), period identifier (Clause 4.35), or a compound of the two."@en ;
+skos:topConceptOf cs: ;
+.
+:4-52 a skos:Concept ; skos:notation "4.52." ;
+skos:prefLabel "zone"@en ;
+rdfs:isDefinedBy cs: ;
+skos:definition "<DGGS> particular region of space-time"@en ;
+skos:scopeNote "The primitives of zone are location (Clause 4.31) and period (Clause 4.34)."@en ;
+skos:scopeNote "A zone may be either a single zonal primitive or a compound zone comprising one location (Clause 4.31) and one period (Clause 4.34)."@en ;
+skos:scopeNote "Zones may be spatial, temporal, or spatio-temporal, and may be regions of space-time associated with any celestial body."@en ;
+skos:topConceptOf cs: ;
+.
+
+<https://orcid.org/0000-0002-8742-7730>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:affiliation <https://surroundaustralia.com> ;
+  sdo:name "Nicholas J. Car" ;
+  sdo:honorificPrefix "Dr" ;
+  sdo:jobTitle "Data Systems Architect" ;
+  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+.
+
+<https://surroundaustralia.com>
+  a owl:NamedIndividual ;
+  a sdo:Organization ;
+  sdo:name "SURROUND Australia Pty Ltd" ;
+  sdo:url <https://surroundaustralia.com> ;
+.
+
+<https://www.ogc.org>
+  a owl:NamedIndividual ;
+  a sdo:Organization ;
+  sdo:name "Open Geospatial Consortium" ;
+  sdo:url <https://www.ogc.org> ;
+.
