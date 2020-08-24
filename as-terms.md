@@ -1,6 +1,6 @@
 Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE) 
 
-# DGGS Abstract Sepcification 2.0 Terms and definitions
+# DGGS Abstract Specification 2.0 Terms and definitions
 ### A taxonomy
 
 ## Metadata

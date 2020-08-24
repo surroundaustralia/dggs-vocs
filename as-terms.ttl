@@ -16,9 +16,9 @@ cs:
     dcterms:modified "2020-08-21"^^xsd:date ;
     dcterms:publisher <https://www.ogc.org> ;
     skos:definition "Terms, represented as SKOS Concepts, from Section 4 of the Discrete Global Grid Abstract Specification, version 2.0."@en ;
-    skos:prefLabel "DGGS Abstract Sepcification 2.0 Terms and definitions"@en ;
+    skos:prefLabel "DGGS Abstract Specification 2.0 Terms and definitions"@en ;
     owl:versionIRI <https://w3id.org/dggs/as-terms/1.0> ;
-    dcterms:provenance "DGGS Abstract Sepcification 2.0"@en ;
+    dcterms:provenance "DGGS Abstract Specification 2.0"@en ;
     skos:hasTopConcept 
         :4-1 ,
         :4-2 ,
