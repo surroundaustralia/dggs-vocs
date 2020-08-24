@@ -5,6 +5,7 @@ This is a collection of [SKOS](https://www.w3.org/TR/skos-reference/) vocabulari
 The vocabularies are:
 
 * [as-terms.ttl](as-terms.ttl) - Abstract Specification Terms
+    * [documentation](as-terms.md)
 
 
 ## License
